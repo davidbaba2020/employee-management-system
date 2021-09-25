@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.87.0">
+    <title>Davacom Inter Biz</title>
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/dist/js/bootstrap.min.js" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+<body class="text-center text-white bg-dark bg-opacity-15">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+      <h3 class="h3 mb-3 fw-normal">Davacom Int. Add Staff</h3>
+  </header>
+</div>
+
+  <main class="form-signin m-xl-3">
+    <form class="row g-3" th:action="@{/saveEmployee}" th:object= "${employee}"  method="POST"  >
+      <!--       fff-->
+        <div class="form-floating mb-lg-auto">
+          <input type="text" th:field = "*{employeeFirstName}" class="form-control" id="floatingInput1" placeholder="Empployee First Name">
+          <label for="floatingInput1" class="text-black">FIsrt Name</label>
+        </div>
+      <div class="form-floating mb-lg-auto">
+        <input type="text" th:field = "*{employeeLastName}" class="form-control" id="floatingInput2" name="lstName" placeholder="Employee Last Name">
+        <label for="floatingInput2" class="text-black">Last Name</label>
+      </div>
+      <div class="form-floating mb-lg-auto">
+        <input type="email" th:field = "*{email}" class="form-control" id="floatingInput3" name="email" placeholder="name@example.com">
+        <label for="floatingInput3" class="text-black">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" th:field = "*{password}" class="form-control" id="floatingPassword" placeholder="Password" >
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div class="form-floating mb-lg-auto">
+        <select class="form-select" th:field="*{staffType}" id="floatingInput5" name="rank" aria-label="Default select example" placeholder="Rank">
+                <option th:value="'ADMIN'" th:text="ADMIN"></option>
+                <option th:value="'SENIOR_STAFF'" th:text="SENIOR_STAFF"></option>
+                <option th:value="'JUNIOR_STAFF'" th:text="JUNIOR_STAFF"></option>
+                <option th:value="'CASUAL_STAFF'" th:text="CASUAL_STAFF"></option>
+        </select>
+        <label for="floatingInput5" class="text-black">Select Rank</label>
+      </div>
+
+      <button type="submit" class=" col-6 btn btn-primary btn-lg" >Add New Employee</button>
+    </form>
+
+<!--  <main class="px-3">-->
+  </main>
+  <div class="modal-footer align-items-center">
+      <footer class="mt-auto text-white-50 text-black ">
+        <p class="text-lg-center">Davacom Int Biz, Building The Future today</p>
+      </footer>
+  </div>
+</body>
+</html>
